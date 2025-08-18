@@ -1,0 +1,70 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bakalarka_Jelinek.Recenze"
+             Title="Přidat recenzi">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label x:Name="MistoLabel"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#333" />
+
+            <Editor x:Name="ReviewEntry"
+                    Placeholder="Zde napište svou recenzi..."
+                    AutoSize="TextChanges"
+                    HeightRequest="100"
+                    BackgroundColor="#f0f0f0"
+                    TextColor="Black"
+                    Margin="0,10" />
+
+            <Label Text="Hodnocení:"
+                   FontAttributes="Bold"
+                   FontSize="16" />
+
+            <HorizontalStackLayout x:Name="StarContainer" 
+                                   Spacing="8" 
+                                   HorizontalOptions="Center" />
+
+            <Label x:Name="RatingValueLabel"
+                   Text="Hodnocení: 0 / 5"
+                   FontAttributes="Italic"
+                   HorizontalOptions="Center" />
+
+            
+            <Button Text="Přidat fotku" 
+                    Clicked="OnPickPhotoClicked"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="8" />
+
+            <Image x:Name="PhotoPreview"
+                   HeightRequest="160"
+                   Aspect="AspectFill"
+                   IsVisible="False"
+                   Margin="0,8,0,4" />
+
+            <Label x:Name="PhotoInfo"
+                   FontSize="12"
+                   Opacity="0.7"
+                   IsVisible="False" />
+
+            <Button x:Name="RemovePhotoButton"
+                    Text="Odebrat fotku"
+                    IsVisible="False"
+                    Clicked="OnRemovePhotoClicked"
+                    BackgroundColor="#E53935"
+                    TextColor="White"
+                    CornerRadius="8" />
+            
+
+            <Button Text="Odeslat recenzi"
+                    Clicked="OnOdeslatClicked"
+                    BackgroundColor="#6A0DAD"
+                    TextColor="White"
+                    CornerRadius="8" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

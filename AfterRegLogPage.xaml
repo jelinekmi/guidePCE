@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bakalarka_Jelinek.AfterRegLogPage"
+             Title="Uživatelská stránka">
+    <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="White">
+
+       
+        <Grid ColumnDefinitions="Auto,*">
+
+
+            <HorizontalStackLayout Spacing="10" Grid.Column="1" HorizontalOptions="End">
+                <Button Text="Profil" WidthRequest="100" Clicked="OnProfileClicked"/>
+                <Button Text="Odhlásit" WidthRequest="100" Clicked="OnLogoutClicked"/>
+            </HorizontalStackLayout>
+        </Grid>
+        
+        <Label Text="Vítejte v Pardubicích" FontSize="20" HorizontalOptions="Center" TextColor="Black"/>
+
+        
+        <Frame BackgroundColor="White" BorderColor="White">
+            <Image Source="pce.png" HeightRequest="150" Aspect="AspectFit"/>
+        </Frame>
+
+
+
+        <Grid HorizontalOptions="Center" ColumnSpacing="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            
+            <Frame Grid.Row="0" Grid.Column="0"
+           BackgroundColor="#E61E1E"
+           CornerRadius="15"
+           Padding="10"
+           WidthRequest="120"
+           HeightRequest="120"
+           HasShadow="True">
+                <Grid>
+                    <Image Source="monument_icon.png"
+                   Opacity="0.5"
+                   Aspect="AspectFit"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"
+                   HeightRequest="60"/>
+                    <Label Text="Památky"
+                   FontAttributes="Bold"
+                   FontSize="16"
+                   TextColor="White"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPamatkyClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            
+            <Frame Grid.Row="0" Grid.Column="1"
+           BackgroundColor="#004080"
+           CornerRadius="15"
+           Padding="10"
+           WidthRequest="120"
+           HeightRequest="120"
+           HasShadow="True">
+                <Grid>
+                    <Image Source="restaurant_icon.png"
+                   Opacity="0.5"
+                   Aspect="AspectFit"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"
+                   HeightRequest="60"/>
+                    <Label Text="Restaurace"
+                   FontAttributes="Bold"
+                   FontSize="16"
+                   TextColor="White"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRestauraceClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            
+            <Frame Grid.Row="1" Grid.Column="0"
+           BackgroundColor="#004080"
+           CornerRadius="15"
+           Padding="10"
+           WidthRequest="120"
+           HeightRequest="120"
+           HasShadow="True">
+                <Grid>
+                    <Image Source="shop_icon.png"
+                   Opacity="0.5"
+                   Aspect="AspectFit"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"
+                   HeightRequest="60"/>
+                    <Label Text="Obchody"
+                   FontAttributes="Bold"
+                   FontSize="16"
+                   TextColor="White"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnObchodyClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            
+            <Frame Grid.Row="1" Grid.Column="1"
+           BackgroundColor="#E61E1E"
+           CornerRadius="15"
+           Padding="10"
+           WidthRequest="120"
+           HeightRequest="120"
+           HasShadow="True">
+                <Grid>
+                    <Image Source="bar_icon.png"
+                   Opacity="0.5"
+                   Aspect="AspectFit"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"
+                   HeightRequest="60"/>
+                    <Label Text="Bary"
+                   FontAttributes="Bold"
+                   FontSize="16"
+                   TextColor="White"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"/>
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBaryClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+
+
+
+    </VerticalStackLayout>
+    
+
+</ContentPage>
+

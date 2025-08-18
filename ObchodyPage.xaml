@@ -1,0 +1,96 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bakalarka_Jelinek.ObchodyPage"
+             Title="Obchody v Pardubicích">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Label Text="Seznam obchodů v Pardubicích:"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,10"/>
+
+            <Picker x:Name="TagFilter"
+                    Title="Filtrovat podle štítku"
+                    SelectedIndexChanged="OnTagFilterChanged" />
+
+            <CollectionView x:Name="ObchodyList"
+                            Margin="0,10"
+                            HeightRequest="800">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="LightGray"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="12"
+                                Margin="0,6"
+                                BackgroundColor="White"
+                                Shadow="Small">
+
+                            <Grid ColumnDefinitions="*,Auto"
+                                  RowSpacing="6">
+                                <VerticalStackLayout Spacing="2" Grid.Column="0">
+                                    <Label Text="{Binding Nazev}"
+                                           FontAttributes="Bold"
+                                           FontSize="18"
+                                           TextColor="#222"/>
+                                    <Label Text="{Binding Typ}"
+                                           FontSize="13"
+                                           TextColor="#888" />
+                                    <Label Text="{Binding Adresa}"
+                                           FontSize="13"
+                                           TextColor="#666" />
+                                    <Label Text="{Binding Lat, StringFormat='Lat: {0:F5}'}"
+                                           FontSize="12"
+                                           TextColor="Gray"/>
+                                    <Label Text="{Binding Lon, StringFormat='Lon: {0:F5}'}"
+                                           FontSize="12"
+                                           TextColor="Gray"/>
+                                    <Label Text="{Binding PrumerneHodnoceni, StringFormat='Průměrné hodnocení: {0:F1} / 5'}"
+                                           TextColor="DarkOrange"
+                                           FontSize="13"
+                                           IsVisible="{Binding PrumerneHodnoceni, Converter={StaticResource NonZeroVisibilityConverter}}" />
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="6"
+                                                     HorizontalOptions="End"
+                                                     VerticalOptions="Start">
+                                    <Button Text="{Binding FavoriteIcon}"
+                                            FontSize="22"
+                                            BackgroundColor="#6A0DAD"
+                                            TextColor="White"
+                                            WidthRequest="42"
+                                            HeightRequest="42"
+                                            CornerRadius="10"
+                                            Padding="0"
+                                            Clicked="OnFavoriteClicked"
+                                            IsVisible="{Binding IsUserLoggedIn}" />
+
+                                    <Button Text="Navigovat"
+                                            FontSize="13"
+                                            BackgroundColor="#6A0DAD"
+                                            TextColor="White"
+                                            CornerRadius="8"
+                                            Padding="4"
+                                            WidthRequest="90"
+                                            Clicked="OnNavigateClicked"/>
+                                    
+                                    <Button Text="recenze"
+                                            FontSize="13"
+                                            BackgroundColor="#6A0DAD"
+                                            TextColor="White"
+                                            CornerRadius="8"
+                                            Padding="4"
+                                            WidthRequest="120"
+                                            Clicked="OnRecenzeClicked"/>
+                                </VerticalStackLayout>
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bakalarka_Jelinek.RegisterPage"
+             Title="Registrace">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Registrace" FontSize="24" HorizontalOptions="Center"/>
+
+        <Entry Placeholder="Jméno" x:Name="NameEntry"/>
+        <Entry Placeholder="Email" x:Name="EmailEntry"/>
+        <Entry Placeholder="Heslo" x:Name="PasswordEntry" IsPassword="True"/>
+        <Entry Placeholder="Potvrzení hesla" x:Name="ConfirmPasswordEntry" IsPassword="True"/>
+
+        <Button Text="Registrovat" Clicked="OnRegisterButtonClicked"/>
+    </VerticalStackLayout>
+
+</ContentPage>

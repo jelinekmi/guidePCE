@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bakalarka_Jelinek.ProfilPage"
+             Title="Profil">
+    <VerticalStackLayout Padding="20">
+
+        
+        <Image x:Name="ProfileImage" Source="default_profile.png" HeightRequest="100" WidthRequest="100"/>
+        <Button Text="Změnit fotku" Clicked="OnChangePhotoClicked"/>
+
+        
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="Nastavení" BackgroundColor="LightGray" IsEnabled="False"/>
+            <Button Text="Oblíbené" Clicked="OnFavoritesClicked"/>
+            <Button Text="Recenze" Clicked="OnReviewsClicked"/>
+        </HorizontalStackLayout>
+
+        
+        <Label Text="Jméno:" FontSize="Medium"/>
+        <Entry x:Name="NameEntry" IsReadOnly="True"/>
+
+       
+        <Label Text="Email:" FontSize="Medium"/>
+        <Entry x:Name="EmailEntry" IsReadOnly="True"/>
+
+        
+        <Label Text="Heslo:" FontSize="Medium"/>
+        <HorizontalStackLayout>
+            <Entry x:Name="PasswordEntry" IsPassword="True"/>
+            
+        </HorizontalStackLayout>
+
+        
+        <Button Text="Změna hesla" Clicked="OnChangePasswordClicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

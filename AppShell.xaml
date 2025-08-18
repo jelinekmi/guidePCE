@@ -1,0 +1,20 @@
+<Shell
+    x:Class="Bakalarka_Jelinek.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Bakalarka_Jelinek"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Bakalarka_Jelinek">
+
+    
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="After Login"
+        ContentTemplate="{DataTemplate local:AfterRegLogPage}"
+        Route="AfterRegLogPage" />
+
+   
+</Shell>
